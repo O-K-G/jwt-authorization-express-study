@@ -1,0 +1,36 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "",
+  "author": "O. K. G.",
+  "type": "module",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && eslint . && tsc",
+    "start": "NODE_ENV=production pm2-runtime start dist/server.js --name \"express-api\"",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.2",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "nodemon": "^3.1.14",
+    "tsx": "^4.23.13",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.0"
+  },
+  "dependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "pm2-runtime": "^5.4.1",
+    "rimraf": "^6.1.3"
+  }
+}
