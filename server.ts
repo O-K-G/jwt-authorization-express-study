@@ -1,6 +1,6 @@
-// Authorization with JWT.
-// Does not include authentication.
-// Only authorizes already authenticated users.
+// Authentication with JWT.
+// Does not include authorization.
+// Only authenticates already authorized users.
 // Refresh token can be added.
 
 
