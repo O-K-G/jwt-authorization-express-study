@@ -32,7 +32,7 @@ import jwt, { JwtPayload } from "jsonwebtoken";
 import cors from "cors";
 
 const app: Express = express();
-const port = 3000;
+const PORT = 3000;
 const isProduction = process.env.NODE_ENV === "production";
 
 const allowedOrigins = isProduction ? [""] : ["http://localhost:3000"];
@@ -107,6 +107,8 @@ app.get("/posts", authenticateToken, (req: Request, res: Response) => {
 });
 
 app.post("/login", (req: Request, res: Response) => {
+  // Authentication login. That's in server1.ts.
+  
   const accessToken = jwt.sign(
     { name: req.body.username },
     process.env.ACCESS_TOKEN_SECRET || "fallback_secret",
@@ -115,8 +117,8 @@ app.post("/login", (req: Request, res: Response) => {
   res.json({ accessToken });
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(
-    `Example app listening on port ${port}, env: ${process.env.NODE_ENV}`,
+    `Example app listening on port ${PORT}, env: ${process.env.NODE_ENV}`,
   );
 });
